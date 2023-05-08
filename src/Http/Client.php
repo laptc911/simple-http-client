@@ -121,7 +121,7 @@ class Client implements ClientInterface
         $response = new Response($result, $http_response_header);
         if ($result === false) {
             $status = $response->getStatus();
-            if (strpos($status, '2') !== 0 && strpos($status, '3') !== 0) {
+            if (strpos($status, '4') === 0 && strpos($status, '5') === 0) {
                 throw new \Exception("Unexpected response status: {$status} while fetching {$url}\n" . $status);
             }
         }
